@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+        }
+        #div1::after{
+            content: '';
+            width: 500px;
+            border: 10px solid transparent;
+            border-top-color: #ccc;
+        }
+        #div1::selection{
+            color: yellow;
+            background: #ff0000;
+        }
+        /*#div1::first-line{*/
+            /*color: #0086b3;*/
+        /*}*/
+        #div1::first-letter{
+            color: #0ed234;
+        }
+        input::placeholder{
+            color: blue;
+        }
+        span{
+            color: #795da3;
+        }
+    </style>
+</head>
+        <body>
+            <div id="div1">
+                耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶耶
+
+            </div>
+            <input type="text"placeholder="q " >
+            <span>百度一下你就知道</span>
+        </body>
+</html>
