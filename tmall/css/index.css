@@ -1,0 +1,94 @@
+#header{
+    background: #f2f2f2;
+    /*height: 32px;*/
+    color: #fff;
+    font-weight: 100;
+    font-size: 12px;
+}
+#login-contain{
+    line-height: 32px;
+    float: left;
+}
+#login-contain a{
+    margin-left: 20px;
+    color: #fff;
+}
+#login-contain a:hover{
+    /*color: red;*/
+}
+#header-menu {
+    float: right;
+    line-height: 32px;
+}
+#header-menu li{
+    float: left;
+    padding: 0 14px;
+}
+#header-menu .icon-ai66{
+    color: #fff;
+    font-size: 14px;
+}
+#header-menu .icon-daohang {
+     color: #fff;
+     font-size: 14px;
+ }
+#header-menu .icon-phone {
+    color: #fff;
+    font-size: 14px;
+}
+#search{
+    background: red;
+    height: 32px;
+}
+#div1{
+    width: 0px;
+    border: 10px solid transparent;
+    border-left-color: #bcbaba ;
+}
+#header-menu .menu-hd::after{
+    content: '';
+    width: 0px;
+    border: 3px solid transparent;
+    border-top-color:#bcbaba ;
+    position: absolute;
+    right: 4px;
+    top: 16px;
+    transform-origin: 3px 1.5px;
+}
+#header-menu .menu-hd {
+    position: relative;
+}
+#header-menu .menu-hd:hover::after{
+    transition: transform .2s linear;
+    transform: rotate(180deg);
+}
+#header-menu .menu-hd:hover {
+    background: #fff;
+    color: red;
+}
+#header-menu .menu-hd:hover a{
+    /*background: #fff;*/
+    color: red;
+    text-decoration: underline;
+}
+#header-menu .menu-nav:hover a{
+    color: yellow;
+    text-decoration: underline;
+}
+#header-menu .menu-nav:hover .iconfont{
+    color: yellow;
+
+}
+#header-menu .menu-hd:hover .iconfont{
+    color: red;
+
+}
+#header-menu .menu-nav .iconfont{
+    vertical-align: middle;
+}
+#header-menu .menu-nav:hover a span{
+    color:#fff;
+}
+#header-menu .menu-nav a:hover span{
+    color:yellow;
+}
