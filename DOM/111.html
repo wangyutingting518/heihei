@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+
+        #container {
+            width: 320px;
+            height: 200px;
+            border: 1px solid #000000;
+            position: relative;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        #container .selected2{
+            width: 880px;
+            position: absolute;
+        }
+        #container .selected2 li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: black;
+            color: white;
+            font-size: 30px;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 100px;
+            /*position: absolute;*/
+            /*left: 400px;*/
+        }
+        #container .selected3{
+            position: absolute;
+            left:50%;
+            transform: translate(-50%);
+            bottom: 10px;
+
+        }
+        #container .selected3 span{
+            width: 100px;
+            height: 30px;
+            background: #cccccc;
+            color: black;
+            margin-right: 10px;
+            line-height: 30px;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+    <ul class="selected2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div class="selected3">
+        <span id="left">向左</span>
+        <span id="right">向右</span>
+    </div>
+</div>
+<script>
+    var aSelected2=document.getElementsByClassName('selected2');
+    var oLeft=document.getElementById('left');
+    var oRight=document.getElementById('right');
+    var speed=-2;
+    setInterval(function () {
+        var ileft=aSelected2[0].offsetLeft;
+        aSelected2[0].style.left=ileft+speed+'px';
+        if (ileft<-aSelected2[0].offsetWidth/2) {
+            aSelected2[0].style.left=0;
+        }
+        if(ileft>0){
+            aSelected2[0].style.left=-aSelected2[0].offsetWidth/2+'px';
+        }
+    },10);
+    oLeft.onmouseover=oRight.onmouseover=function () {
+        if(this==oLeft){
+            speed=-2;
+        }else{
+            speed=2;
+        }
+    }
+</script>
+</body>
+</html>
