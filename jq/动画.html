@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #795da3;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">显示</button>
+<button id="btn1">隐藏</button>
+<div id="div1">div</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $('#btn').on('click',function () {
+        $('#div1').slideUp(2000);
+    });
+    $('#btn1').on('click',function () {
+       $(':animated').html('aaaaaa');
+       $('#div1').stop(true,false);
+    });
+    var arr = [1,2,3,4,5];
+    $.each(arr,function (index,elem) {
+        console.log(index);
+        console.log(elem);
+    });
+</script>
+</body>
+</html>
