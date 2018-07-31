@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font:normal 12px/17px Arial;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid ;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="btn">放大</button>
+    <button id="btn1">缩小</button>
+    <div>
+        <textarea  id="div1" cols="30" rows="10">我是一只小青龙，小青龙，我有一个小秘密，小秘密，就不告是一只小青龙，小青龙，我有一个小秘密，小秘密，就不告诉你，就不告诉你。好啦，告诉你吧其实侯亭亭超可爱是一只小青龙，小青龙，我有一个小秘密，小秘密，就不告诉你，就不告诉你。好啦，告诉你吧其实侯亭亭超可爱是一只小青龙，小青龙，我有一个小秘密，小秘密，就不告诉你，就不告诉你。好啦，告诉你吧其实侯亭亭超可爱是一只小青龙，小青龙，我有一个小秘密，小秘密，就不告诉你，就不告诉你。好啦，告诉你吧其实侯亭亭超可爱是一只小青龙，小青龙，我有一个小秘密，小秘密，就不告诉你，就不告诉你。好啦，告诉你吧其实侯亭亭超可爱是一只小青龙，小青龙，我有一个小秘密，小秘密，就不告诉你，就不告诉你。好啦，告诉你吧其实侯亭亭超可爱诉你，就不告诉你。好啦，告诉你吧其实侯亭亭超可爱，刘家慧是老奶奶</textarea>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $(function () {
+        //     var $div1 = $('#div1');
+        //     $('#btn').click(function () {
+        //        if (!$div1.is(":animated")){
+        //            if ($div1.height()<500){
+        //                $div1.animate({height : "+=50"},400);
+        //            }
+        //        }
+        // });
+        //     $('#btn1').click(function(){//缩小按钮绑定单击事件
+        //         if (!$div1.is(":animated")){
+        //             if ($div1.height()>50){
+        //                 $div1.animate({height  : "-=50"},400)
+        //             }
+        //         }
+        //     });
+        // });
+        $(function(){
+            var $div1 = $('#div1');//获取评论框
+            $('#btn').click(function(){ //向上按钮绑定单击事件
+                if(!$div1.is(":animated")){//判断是否处于动画
+                    $div1.animate({ scrollTop  : "-=50" } , 400);
+                }
+            })
+            $('#btn1').click(function(){//向下按钮绑定单击事件
+                if(!$div1.is(":animated")){
+                    $div1.animate({ scrollTop  : "+=50" } , 400);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
