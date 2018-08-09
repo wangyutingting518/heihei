@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<ul>
+    <!--<li v-for="(val,i) in arr">-->
+        <!--{{val}},{{i}}-->
+    <!--</li>-->
+    <!--<li v-for="i in 3">-->
+        <!--{{msg}}-->
+    <!--</li>-->
+    <!--<li v-for="(val,index) in stuList">-->
+        <!--{{index}}:姓名：{{val.name}},年龄:{{val.age}}-->
+    <!--</li>-->
+    <li v-for="(val,key,index) in obj">
+            {{index}},{{val}},{{key}}
+    </li>
+
+</ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'helloworld',
+            arr:[1111,2222,3333,4444],
+            stuList:[{
+                name:'刘胖胖',
+                age:20
+            },{
+                name:'侯笨笨',
+                age:20
+            },{
+                name:'王可爱',
+                age:3
+            }],
+            obj:{
+                a:1,
+                b:2,
+                c:3
+            }
+        }
+    })
+</script>
+</body>
+</html>
