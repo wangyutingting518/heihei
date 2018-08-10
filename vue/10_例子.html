@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            height: 50px;
+            background: #0ed234;
+            line-height: 50px;
+            padding:0 20px;
+            margin-bottom: 10px;
+        }
+        span{
+            float: right;
+        }
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>services</h1>
+    <ul>
+        <li v-for="(obj,index) in arr" :class="{red:obj.active}" @click="fn(obj)">
+            {{obj.name}}
+            <span>{{obj.price}}</span>
+        </li>
+    </ul>
+    <hr>
+    total:
+    <span>{{total}}</span>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[{name:'aaa',price:111,active:false},
+                {name:'bbb',price:222,active:false},
+                {name:'ccc',price:333,active:false},
+                {name:'ddd',price:444,active:false},
+                {name:'eee',price:555,active:false}
+            ],
+            total:0
+        },
+        methods:{
+            fn(obj){
+                obj.active = !obj.active;
+                if(obj.active){
+                    this.total +=obj.price;
+                }
+                else{
+                    this.total -=obj.price;
+                }
+            }
+        },
+    })
+</script>
+</body>
+</html>
