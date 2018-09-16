@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Welcome extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    count:0
+                }
+            }
+            add(){
+                this.setState({
+                   count:this.state.count+2
+                });
+            }
+            render(){
+                return(
+                    <div>
+                        <button onClick={this.add.bind(this)}>click</button>
+                        <h1>{this.props.name} {this.state.count}</h1>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Welcome name="唯创"  description="唯创网讯是省内。。。。。">666</Welcome>,
+            document.getElementById('root')
+        );
+    </script>
+    </body>
+</html>

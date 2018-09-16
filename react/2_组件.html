@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="browser.min.js"></script>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script type="text/babel">
+    let Welcome = (props)=>{
+        return(
+            <div>
+            <h1>{props.name}</h1>
+            <p> {props.description}{props.children}</p>
+            </div>
+        );
+    }
+    ReactDOM.render(
+        <div>
+            <Welcome name="唯创" description="123456789">aaaaaaaaa</Welcome>
+        <Welcome name="唯创" description="123456789">aaaaaaaaa</Welcome>
+
+        </div>,
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>

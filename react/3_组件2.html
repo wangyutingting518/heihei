@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="browser.min.js"></script>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script type="text/babel">
+    class Welcome extends React.Component{
+        constructor(props){
+            super(props)
+        }
+        render(){
+            return(
+                <p>{this.props.name}</p>
+            )
+    }
+    }
+    ReactDOM.render(
+        <Welcome name="唯创" description="123456789">aaaaaaaaa</Welcome>,
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>

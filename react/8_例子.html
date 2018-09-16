@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+
+<script type="text/babel">
+    class Mine extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                msg:'全部士兵数量:',
+                count:100
+            }
+        }
+        change(count){
+            this.setState({
+                count:this.state.count - 10
+
+                })
+        }
+        render(){
+            return(
+                <div>
+                    <h4 ref="btn">{this.state.msg} {this.state.count}</h4>
+                    <Product name="将军a有士兵：" count="100" ref="btn" ></Product>
+                    <button onClick={this.change.bind(this,10)} >调兵</button>
+                    <Product name="将军b有士兵：" count="100" ></Product>
+                    <button onClick={this.change.bind(this,10)}>调兵</button>
+                </div>
+            )
+        }
+    }
+    class Product extends React.Component{
+        constructor(props){
+            super(props);
+            count:200
+        }
+        add(count){
+            // this.setState({
+            //     count:this.state.count+10
+            // })
+        }
+        render(){
+            return(
+                <div
+                    onClick={
+                        ()=>{
+                            this.props.onClick(10)
+                        }
+                    }
+                >
+                    <span>{this.props.name} {this.props.count}</span>
+
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+
+        <Mine></Mine>,
+        document.getElementById('root')
+    )
+</script>
+</body>
+</html>
