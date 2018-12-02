@@ -4,18 +4,92 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    #btn{
+        background-color: #F296B2;
+        height: 40px;
+        width: 60px;
+    }
+    #d1{
+        background-color: #D49AE1;
+        height: 40px;
+        width: 200px;
+        font-size: 25px;
+    }
+    #d{
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 20px;
+        color: #a71d5d;
+        background-color: #FA5889;
+    }
+    .l{
+        width: 300px;
+        margin: 30px auto;
+    }
+
+</style>
 <body>
-<div id="app" v-text="msg">
-        <!--{{msg}}-->
+<div class="l"><input type="text" id="d1"/>
+    <input type="button" id="btn" value="点击"/>
+    <div id="d"></div>
 </div>
 <script src="vue.js"></script>
 <script>
-    var vm = new Vue({
-        el:'#app',
-        data:{
-            msg:'helloworld'
+    btn.onclick=function(){
+        var d=document.getElementById('d');
+        var d1=document.getElementById('d1');
+        var a=d1.value;
+
+//console.log(a);
+
+        var str="int char float if else";
+        var str1=str.split(" ");
+        console.log(str1);
+        var num=0;
+        var flog=0;
+        var count=0;
+        var flog2=0;
+        /*判断是保留字*/
+        for(var i=0;i<5;i++){
+// console.log(str1[i]);
+            if(a==str1[i]){
+                d.innerHTML="是保留字";
+                flog2=1;
+                break;
+            }
         }
-    });
+        console.log(a[1]);
+        if(flog2==0){
+            /*判断是标识符*/
+            if((a[0]>='a'&&a[0]<='z')||(a[0]>='A'&&a[0]<='Z')){
+                for(var n=1;n<a.length;n++){
+                    if((a[n]>='a'&&a[n]<='z')||(a[n]>='A'&&a[n]<='Z')||(a[n]>='0'&&a[n]<='9')){
+                        d.innerHTML="是标识符";
+                    }
+                }
+            }else if(a[0]>='0'&&a[0]<='9') {
+                for ( n = 1; n < a.length; n++) {
+                    if ((a[n] >= 'a' && a[n] <= 'z') || (a[n] >= 'A' && a[1] <= 'Z') || (a[n] >= '0' && a[n] <= '9')) {
+                        d.innerHTML = "输入非法";
+                    }
+                }
+            }
+        }
+        /*判断是数字*/
+        for(var j=0;j<a.length;j++){
+
+            if(a[j]>'0'&&a[j]<'9'){
+                num++;
+            }
+            if(num==a.length){
+                d.innerHTML="是数字";
+            }
+        }
+    }
+
 </script>
 </body>
 </html>
