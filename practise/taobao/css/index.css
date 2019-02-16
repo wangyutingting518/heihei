@@ -3,7 +3,23 @@
     height: 35px;
 }
 .login{
-    font-size: 12px;
+    font-size: 11px;
     line-height: 35px;
-    color: #aeaeae;
+    margin-left: 20px;
+    font-weight: 150;
+    color: #989898;
+}
+a{
+    text-decoration: none;
+    margin-left: 7px;
+    margin-right: 10px;
+    font-size:11px;
+    color: #989898;
+}
+.idea{
+    color: red;
+    margin-right: 1px;
+}
+.login a:hover{
+    color: red;
 }
